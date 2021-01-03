@@ -1,0 +1,19 @@
+{
+    "devices": [
+        {
+            "name": "dev1",
+            "concentration": 0.5,
+            "neighbours": [ "dev2" ]
+        },
+        {
+            "name": "dev2",
+            "concentration": 0.65,
+            "neighbours": [ "dev1" ]
+        },
+        {
+            "name": "dev3",
+            "concentration": 0.1,
+            "neighbours": [ "dev1", "dev2" ]
+        }
+    ]
+}
