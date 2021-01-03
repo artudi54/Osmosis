@@ -6,17 +6,17 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 import java.util.Objects;
 
-public class Device {
+public class ConfigurationDevice {
     private final String name;
     private final double concentration;
     private final double delay;
     private final List<String> neighbours;
 
     @JsonCreator
-    public Device(@JsonProperty("name") String name,
-                  @JsonProperty("concentration") double concentration,
-                  @JsonProperty("delay") double delay,
-                  @JsonProperty("neighbours") List<String> neighbours) {
+    public ConfigurationDevice(@JsonProperty("name") String name,
+                               @JsonProperty("concentration") double concentration,
+                               @JsonProperty("delay") double delay,
+                               @JsonProperty("neighbours") List<String> neighbours) {
         this.name = name;
         this.concentration = concentration;
         this.delay = delay;
@@ -44,7 +44,7 @@ public class Device {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        Device device = (Device) o;
+        ConfigurationDevice device = (ConfigurationDevice) o;
         return Double.compare(device.concentration, concentration) == 0 && Double.compare(device.delay, delay) == 0 && Objects.equals(name, device.name) && Objects.equals(neighbours, device.neighbours);
     }
 
@@ -55,7 +55,7 @@ public class Device {
 
     @Override
     public String toString() {
-        return "Device{" +
+        return "ConfigurationDevice{" +
             "name='" + name + '\'' +
             ", concentration=" + concentration +
             ", delay=" + delay +

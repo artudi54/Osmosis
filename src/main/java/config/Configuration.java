@@ -10,14 +10,14 @@ import java.util.List;
 import java.util.Objects;
 
 public class Configuration {
-    private final List<Device> devices;
+    private final List<ConfigurationDevice> devices;
 
     @JsonCreator
-    public Configuration(@JsonProperty("devices") List<Device> devices) {
+    public Configuration(@JsonProperty("devices") List<ConfigurationDevice> devices) {
         this.devices = devices;
     }
 
-    public List<Device> getDevices() {
+    public List<ConfigurationDevice> getDevices() {
         return devices;
     }
 
