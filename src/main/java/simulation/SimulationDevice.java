@@ -29,6 +29,10 @@ public class SimulationDevice {
     public void setConcentration(double concentration) {
         this.concentration = concentration;
     }
+    
+    public void setRelativeConcentration(double relative) {
+        this.concentration += relative;
+    }
 
     public double getDelay() {
         return delay;
@@ -46,12 +50,20 @@ public class SimulationDevice {
         this.messageSender = messageSender;
     }
 
+    
     public void handleMessage(SimulationDevice device) {
-        
+        double relative = this.getConcentration() - device.getConcentration();
+        if(relative<0) {
+            device.setRelativeConcentration(relative * 0.5);
+            this.setRelativeConcentration(-relative * 0.5);
+        }
     }
     
-    
     public void handleTimeout() {
-        
+        neighbours.forEach(
+            neighbour -> {
+                messageSender.send(this, neighbour);
+            }
+        );
     }
 }

@@ -4,19 +4,25 @@
             "name": "dev1",
             "concentration": 0.5,
             "delay": 3,
-            "neighbours": [ "dev2" ]
+            "neighbours": [ "dev2", "dev3" ]
         },
         {
             "name": "dev2",
             "concentration": 0.65,
             "delay": 5,
-            "neighbours": [ "dev1" ]
+            "neighbours": [ "dev1", "dev3" ]
         },
         {
             "name": "dev3",
             "concentration": 0.1,
             "delay": 2.5,
-            "neighbours": [ "dev1", "dev2" ]
+            "neighbours": [ "dev1", "dev2", "dev4" ]
+        },
+        {
+            "name": "dev4",
+            "concentration": 0.3,
+            "delay": 2,
+            "neighbours": [ "dev3" ]
         }
     ]
 }
