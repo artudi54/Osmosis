@@ -8,17 +8,20 @@ import java.util.Objects;
 
 public class ConfigurationDevice {
     private final String name;
-    private final double concentration;
+    private final int tasks;
+    private final int capacity;
     private final double delay;
     private final List<String> neighbours;
 
     @JsonCreator
     public ConfigurationDevice(@JsonProperty("name") String name,
-                               @JsonProperty("concentration") double concentration,
+                               @JsonProperty("tasks") int tasks,
+                               @JsonProperty("capacity") int capacity,
                                @JsonProperty("delay") double delay,
                                @JsonProperty("neighbours") List<String> neighbours) {
         this.name = name;
-        this.concentration = concentration;
+        this.tasks = tasks;
+        this.capacity = capacity;
         this.delay = delay;
         this.neighbours = neighbours;
     }
@@ -27,9 +30,9 @@ public class ConfigurationDevice {
         return name;
     }
 
-    public double getConcentration() {
-        return concentration;
-    }
+    public int getCapacity() { return capacity; }
+
+    public int getTasks() { return tasks; }
 
     public double getDelay() {
         return delay;
@@ -45,19 +48,20 @@ public class ConfigurationDevice {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ConfigurationDevice device = (ConfigurationDevice) o;
-        return Double.compare(device.concentration, concentration) == 0 && Double.compare(device.delay, delay) == 0 && Objects.equals(name, device.name) && Objects.equals(neighbours, device.neighbours);
+        return tasks == device.tasks && capacity==device.capacity && Double.compare(device.delay, delay) == 0 && Objects.equals(name, device.name) && Objects.equals(neighbours, device.neighbours);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, concentration, delay, neighbours);
+        return Objects.hash(name, tasks, capacity, delay, neighbours);
     }
 
     @Override
     public String toString() {
         return "ConfigurationDevice{" +
             "name='" + name + '\'' +
-            ", concentration=" + concentration +
+            ", tasks=" + tasks +
+            ", capacity=" + capacity+
             ", delay=" + delay +
             ", neighbours=" + neighbours +
             "}\r\n" ;

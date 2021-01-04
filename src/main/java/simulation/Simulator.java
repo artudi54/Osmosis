@@ -21,7 +21,8 @@ public class Simulator {
             .stream()
             .map(confDev -> new SimulationDevice(
                 confDev.getName(),
-                confDev.getConcentration(),
+                confDev.getTasks(),
+                confDev.getCapacity(),
                 confDev.getDelay(),
                 confDev.getNeighbours()
             ))
@@ -49,7 +50,7 @@ public class Simulator {
     private void printStatus() {
         System.out.println("Time from start " + (double) (System.nanoTime()-startTime)/1000000000+ " s: ");
         simulationDevices.forEach(
-            device -> System.out.println("Device: " + device.getName() + " Concentration: " + device.getConcentration())
+            device -> System.out.println("Device: " + device.getName() + " Current tasks " + device.getTasks())
         );
         System.out.println("\n");
     }
