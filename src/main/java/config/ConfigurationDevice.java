@@ -60,6 +60,6 @@ public class ConfigurationDevice {
             ", concentration=" + concentration +
             ", delay=" + delay +
             ", neighbours=" + neighbours +
-            '}';
+            "}\r\n" ;
     }
 }

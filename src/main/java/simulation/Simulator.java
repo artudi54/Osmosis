@@ -13,6 +13,8 @@ public class Simulator {
     private final Timer timer;
     private int iterationCount;
     
+    private long startTime;
+    
     public Simulator(Configuration configuration) {
         simulationDevices = configuration
             .getDevices()
@@ -29,6 +31,7 @@ public class Simulator {
     } 
     
     public void start() {
+        startTime = System.nanoTime();
         simulationDevices.forEach(
             device -> {
                 long timeout = (long)(device.getDelay() * 1000);
@@ -44,7 +47,7 @@ public class Simulator {
     }
     
     private void printStatus() {
-        System.out.println("Iteration " + iterationCount++ + ": ");
+        System.out.println("Time from start " + (double) (System.nanoTime()-startTime)/1000000000+ " s: ");
         simulationDevices.forEach(
             device -> System.out.println("Device: " + device.getName() + " Concentration: " + device.getConcentration())
         );
