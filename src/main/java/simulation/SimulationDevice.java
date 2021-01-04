@@ -56,6 +56,7 @@ public class SimulationDevice {
         if(relative<0) {
             device.setRelativeConcentration(relative * 0.5);
             this.setRelativeConcentration(-relative * 0.5);
+            System.out.println("Change:\n\tFrom: "+device.getName()+"\n\tTo: "+ this.getName() +"\n\tValue: "+(-relative*0.5) + "\n\n");
         }
     }
     
