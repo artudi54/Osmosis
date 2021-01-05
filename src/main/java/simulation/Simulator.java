@@ -35,7 +35,7 @@ public class Simulator {
         startTime = System.nanoTime();
         simulationDevices.forEach(
             device -> {
-                long timeout = (long)(device.getDelay() * 1000);
+                long timeout = (long)(device.getDelay()*100);
                 TimerTask task = new TimerTask() {
                     @Override public void run() {
                         device.handleTimeout();
