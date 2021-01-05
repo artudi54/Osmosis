@@ -14,10 +14,10 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class GifCreator {
-    public static void generate(Path directory) throws IOException {
+    public static Path generate(Path directory) throws IOException {
+        Path outputPath = directory.resolve("output.gif");
         List<BufferedImage> images = Files.list(directory)
             .map(Path::toFile)
-            .peek(System.out::println)
             .map(file -> {
                 try {
                     return ImageIO.read(file);
@@ -28,7 +28,7 @@ public class GifCreator {
             })
             .collect(Collectors.toList());
         
-        ImageOutputStream output = new FileImageOutputStream(directory.resolve("output.gif").toFile());
+        ImageOutputStream output = new FileImageOutputStream(outputPath.toFile());
         int type = images.get(0).getType();
         GifSequenceWriter writer = new GifSequenceWriter(output, type, 100, true);
         images.forEach(image -> {
@@ -40,5 +40,6 @@ public class GifCreator {
         });
         writer.close();
         output.close();
+        return outputPath;
     }
 }

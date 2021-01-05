@@ -5,7 +5,6 @@ import simulation.output.GifCreator;
 import simulation.output.GraphBuilder;
 import simulation.output.StatusLogger;
 
-
 import java.io.IOException;
 import java.nio.file.Path;
 import java.util.List;
@@ -47,7 +46,8 @@ public class Simulator {
         startTimers();
         renderGraph(0);
         awaitFinish();
-        GifCreator.generate(Path.of("output"));
+        Path output = GifCreator.generate(Path.of("output"));
+        System.out.println("Result saved in: '" + output + "'");
     }
     
     private void startTimers() {
