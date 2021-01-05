@@ -1,5 +1,7 @@
 package simulation;
 
+import simulation.output.StatusLogger;
+
 import java.util.List;
 
 public class SimulationDevice {
@@ -8,6 +10,7 @@ public class SimulationDevice {
     private final int capacity;
     private final double delay;
     private final List<String> neighbours;
+    private StatusLogger statusLogger;
     private MessageSender messageSender;
 
 
@@ -17,6 +20,7 @@ public class SimulationDevice {
         this.capacity = capacity;
         this.delay = delay;
         this.neighbours = neighbours;
+        this.statusLogger = null;
         this.messageSender = null;
     }
 
@@ -28,14 +32,18 @@ public class SimulationDevice {
 
     public void setTasks(int tasks) { this.tasks = tasks; }
 
-    public int getCapacity() { return capacity; }
-    
     private void addTask(){
         tasks++;
     }
-    
+
     private void removeTask(){
         tasks--;
+    }
+
+    public int getCapacity() { return capacity; }
+
+    public double getConcentration(){
+        return (double) this.tasks/this.capacity;
     }
 
     public double getDelay() {
@@ -53,26 +61,26 @@ public class SimulationDevice {
     public void setMessageSender(MessageSender messageSender) {
         this.messageSender = messageSender;
     }
-    
-    private double getConcentration(){
-        return (double) this.tasks/this.capacity;
+
+    public StatusLogger getStatusLogger() {
+        return statusLogger;
     }
 
+    public void setStatusLogger(StatusLogger statusLogger) {
+        this.statusLogger = statusLogger;
+    }
     
+
     public void handleMessage(SimulationDevice device) {
         double relative = this.getConcentration() - device.getConcentration();
-        if(relative<0) {
+        if (relative < 0) {
             device.removeTask();
             this.addTask();
-            System.out.println("Task moved:\n\tFrom: "+device.getName()+"\n\tTo: "+ this.getName() +"\n");
+            statusLogger.logMove(device, this);
         }
     }
     
     public void handleTimeout() {
-        neighbours.forEach(
-            neighbour -> {
-                messageSender.send(this, neighbour);
-            }
-        );
+        neighbours.forEach(neighbour -> messageSender.send(this, neighbour));
     }
 }
