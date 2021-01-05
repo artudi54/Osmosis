@@ -13,7 +13,7 @@ public class StatusLogger {
     }
 
     public void startReport(double time) {
-        System.out.println("Time from start " + time + " s:");
+        System.out.println("Time from start " + time + "s:");
     }
     
     public void logMove(SimulationDevice from, SimulationDevice to) {
@@ -21,7 +21,7 @@ public class StatusLogger {
     }
     
     public void logAll() {
-        devices.forEach(device -> System.out.println("Device: " + device.getName() + " Current tasks " + device.getTasks()));
+        devices.forEach(device -> System.out.println("Device: " + device.getName() + " Current tasks " + device.getTasks() + "/" + device.getCapacity() + " Concentration " + device.getConcentration()));
     }
     
     public void finishReport() {

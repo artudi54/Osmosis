@@ -9,7 +9,9 @@ public class Main {
         URL config = Main.class.getClassLoader().getResource("configuration.json");
         Configuration configuration = Configuration.loadFrom(config);
         System.out.println(configuration);
+        
         Simulator simulator = new Simulator(configuration);
-        simulator.start();
+        simulator.run(100);
+        System.out.println("Simulation finished");
     }
 }
