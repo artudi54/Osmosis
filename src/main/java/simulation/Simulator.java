@@ -1,8 +1,10 @@
 package simulation;
 
 import config.Configuration;
+import simulation.output.GifCreator;
 import simulation.output.GraphBuilder;
 import simulation.output.StatusLogger;
+
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -39,12 +41,13 @@ public class Simulator {
         timer = new Timer();
     } 
     
-    public void run(double speed) throws InterruptedException {
+    public void run(double speed) throws InterruptedException, IOException {
         this.startTime = System.nanoTime();
         this.speed = speed;
         startTimers();
         renderGraph(0);
         awaitFinish();
+        GifCreator.generate(Path.of("output"));
     }
     
     private void startTimers() {

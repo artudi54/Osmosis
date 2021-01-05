@@ -20,11 +20,13 @@ import java.util.stream.Collectors;
 public class GraphBuilder {
     private final Map<String, SimulationDevice> deviceMap;
     private final Path directory;
+    private int count;
     
     public GraphBuilder(List<SimulationDevice> devices, Path directory) throws IOException {
         this.deviceMap = devices.stream()
             .collect(Collectors.toMap(SimulationDevice::getName, x -> x));
         this.directory = directory;
+        this.count = 0;
         recreateDirectory();
     }
     
@@ -40,7 +42,7 @@ public class GraphBuilder {
     
     
     public void render(double time) throws IOException {
-        String name = "output-" + time + ".png";
+        String name = String.format("output %05d (%fs).png", count++, time);
         Path path = directory.resolve(name);
         Graphviz.fromGraph(buildGraph()).render(Format.PNG).toFile(path.toFile());
         System.gc();
