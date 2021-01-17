@@ -2,23 +2,23 @@
     "devices": [
         {
             "name": "dev1",
-            "tasks": 700,
+            "tasks": 1000,
             "capacity": 1000,
-            "delay": 3,
+            "delay": 2,
             "neighbours": [ "dev2" ]
         },
         {
             "name": "dev2",
             "tasks": 100,
             "capacity": 1000,
-            "delay": 5,
+            "delay": 2,
             "neighbours": [ "dev1", "dev3" ]
         },
         {
             "name": "dev3",
             "tasks": 100,
             "capacity": 1000,
-            "delay": 2.5,
+            "delay": 2,
             "neighbours": [ "dev2", "dev4" ]
         },
         {
@@ -26,7 +26,35 @@
             "tasks": 100,
             "capacity": 1000,
             "delay": 2,
-            "neighbours": [ "dev3" ]
+            "neighbours": [ "dev3", "dev5" ]
+        },
+        {
+            "name": "dev5",
+            "tasks": 100,
+            "capacity": 1000,
+            "delay": 2,
+            "neighbours": [ "dev4", "dev6" ]
+        },
+        {
+            "name": "dev6",
+            "tasks": 100,
+            "capacity": 1000,
+            "delay": 2,
+            "neighbours": [ "dev5", "dev7" ]
+        },
+        {
+            "name": "dev7",
+            "tasks": 100,
+            "capacity": 1000,
+            "delay": 2,
+            "neighbours": [ "dev6", "dev8" ]
+        },
+        {
+            "name": "dev8",
+            "tasks": 100,
+            "capacity": 1000,
+            "delay": 2,
+            "neighbours": [ "dev7" ]
         }
     ]
 }
