@@ -1,0 +1,95 @@
+{
+    "devices": [
+        {
+            "name": "cloud",
+            "tasks": 100,
+            "capacity": 10000,
+            "delay": 2,
+            "neighbours": [ "ser1", "ser2", "ser3" ]
+        },
+        {
+            "name": "ser1",
+            "tasks": 500,
+            "capacity": 1000,
+            "delay": 2,
+            "neighbours": [ "cloud", "kom1", "kom2", "kom3" ]
+        },
+        {
+            "name": "ser2",
+            "tasks": 500,
+            "capacity": 1000,
+            "delay": 2,
+            "neighbours": [ "cloud", "kom4", "kom5", "kom6" ]
+        },
+        {
+            "name": "ser3",
+            "tasks": 500,
+            "capacity": 1000,
+            "delay": 2,
+            "neighbours": [ "cloud", "kom7", "kom8", "kom9" ]
+        },
+        {
+            "name": "kom1",
+            "tasks": 100,
+            "capacity": 100,
+            "delay": 2,
+            "neighbours": [ "ser1" ]
+        },
+        {
+            "name": "kom2",
+            "tasks": 100,
+            "capacity": 100,
+            "delay": 2,
+            "neighbours": [ "ser1" ]
+        },
+        {
+            "name": "kom3",
+            "tasks": 100,
+            "capacity": 100,
+            "delay": 2,
+            "neighbours": [ "ser1" ]
+        },
+        {
+            "name": "kom4",
+            "tasks": 100,
+            "capacity": 100,
+            "delay": 2,
+            "neighbours": [ "ser2" ]
+        },
+        {
+            "name": "kom5",
+            "tasks": 100,
+            "capacity": 100,
+            "delay": 2,
+            "neighbours": [ "ser2" ]
+        },
+        {
+            "name": "kom6",
+            "tasks": 100,
+            "capacity": 100,
+            "delay": 2,
+            "neighbours": [ "ser2" ]
+        },
+        {
+            "name": "kom7",
+            "tasks": 100,
+            "capacity": 100,
+            "delay": 2,
+            "neighbours": [ "ser3" ]
+        },
+        {
+            "name": "kom8",
+            "tasks": 100,
+            "capacity": 100,
+            "delay": 2,
+            "neighbours": [ "ser3" ]
+        },
+        {
+            "name": "kom9",
+            "tasks": 100,
+            "capacity": 100,
+            "delay": 2,
+            "neighbours": [ "ser3" ]
+        }
+    ]
+}
