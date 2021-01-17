@@ -71,7 +71,7 @@ public class Simulator {
         statusLogger.logAll();
         statusLogger.finishReport();
         
-        if (iterationCount % 20 == 0) {
+        if (iterationCount % 40 == 0) {
             renderGraph(time);
         }
         
@@ -92,7 +92,7 @@ public class Simulator {
         double epsilonDiff = simulationDevices.stream()
             .map(SimulationDevice::getCapacity)
             .mapToDouble(x -> 2.0 / x)
-            .min()
+            .max()
             .getAsDouble();
         return simulationDevices.stream()
             .allMatch(device -> simulationDevices

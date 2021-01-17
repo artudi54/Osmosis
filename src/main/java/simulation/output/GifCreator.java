@@ -17,6 +17,7 @@ public class GifCreator {
     public static Path generate(Path directory) throws IOException {
         Path outputPath = directory.resolve("output.gif");
         List<BufferedImage> images = Files.list(directory)
+            .sorted()
             .map(Path::toFile)
             .map(file -> {
                 try {

@@ -44,7 +44,7 @@ public class GraphBuilder {
     public void render(double time) throws IOException {
         String name = String.format("output %05d (%fs).png", count++, time);
         Path path = directory.resolve(name);
-        Graphviz.fromGraph(buildGraph()).render(Format.PNG).toFile(path.toFile());
+        Graphviz.fromGraph(buildGraph()).totalMemory(240000000).render(Format.PNG).toFile(path.toFile());
         System.gc();
     }
     
