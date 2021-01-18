@@ -1,0 +1,75 @@
+{
+    "devices": [
+        {
+            "name": "factory",
+            "tasks": 10000,
+            "capacity": 10000,
+            "delay": 2,
+            "neighbours": [ "dev2", "dev1", "dev3" ]
+        },
+        {
+            "name": "dev1",
+            "tasks": 100,
+            "capacity": 1000,
+            "delay": 2,
+            "neighbours": [ "factory", "dev4" ]
+        },
+        {
+            "name": "dev2",
+            "tasks": 100,
+            "capacity": 1000,
+            "delay": 2,
+            "neighbours": [ "factory", "dev5" ]
+        },
+        {
+            "name": "dev3",
+            "tasks": 100,
+            "capacity": 1000,
+            "delay": 2,
+            "neighbours": [ "factory", "dev6" ]
+        },
+        {
+            "name": "dev4",
+            "tasks": 100,
+            "capacity": 1000,
+            "delay": 2,
+            "neighbours": [ "dev1", "dev7" ]
+        },
+        {
+            "name": "dev5",
+            "tasks": 100,
+            "capacity": 1000,
+            "delay": 2,
+            "neighbours": [ "dev2", "dev8" ]
+        },
+        {
+            "name": "dev6",
+            "tasks": 100,
+            "capacity": 1000,
+            "delay": 2,
+            "neighbours": [ "dev3", "dev9" ]
+        },
+        {
+            "name": "dev7",
+            "tasks": 100,
+            "capacity": 1000,
+            "delay": 2,
+            "neighbours": [ "dev4" ]
+        },
+        {
+            "name": "dev8",
+            "tasks": 100,
+            "capacity": 1000,
+            "delay": 2,
+            "neighbours": [ "dev5" ]
+        },
+        {
+            "name": "dev9",
+            "tasks": 100,
+            "capacity": 1000,
+            "delay": 2,
+            "neighbours": [ "dev6" ]
+        }
+
+    ]
+}

@@ -64,7 +64,7 @@ public class Simulator {
     
     private void handleDevice(SimulationDevice device) {
         ++iterationCount;
-        double time = (double)(System.nanoTime() - startTime) / 1000000000 * speed;
+        double time = ((double)(System.nanoTime() - startTime) / 100000000) * speed;
         
         statusLogger.startReport(time);
         device.handleTimeout();

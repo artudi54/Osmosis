@@ -1,0 +1,172 @@
+{
+    "devices": [
+        {
+            "name": "cloud",
+            "tasks": 100,
+            "capacity": 10000,
+            "delay": 2,
+            "neighbours": [ "ser1", "ser2", "ser3", "ser4" ]
+        },
+        {
+            "name": "ser1",
+            "tasks": 500,
+            "capacity": 1000,
+            "delay": 2,
+            "neighbours": [ "cloud", "kom1", "kom2", "kom3", "kom4", "kom5" ]
+        },
+        {
+            "name": "ser2",
+            "tasks": 500,
+            "capacity": 1000,
+            "delay": 2,
+            "neighbours": [ "cloud", "kom6", "kom7", "kom8", "kom9", "kom10" ]
+        },
+        {
+            "name": "ser3",
+            "tasks": 500,
+            "capacity": 1000,
+            "delay": 2,
+            "neighbours": [ "cloud", "kom11", "kom12", "kom13", "kom14", "kom15" ]
+        },
+        {
+            "name": "ser4",
+            "tasks": 500,
+            "capacity": 1000,
+            "delay": 2,
+            "neighbours": [ "cloud", "kom16", "kom17", "kom18", "kom19", "kom20" ]
+        },
+        {
+            "name": "kom1",
+            "tasks": 100,
+            "capacity": 100,
+            "delay": 2,
+            "neighbours": [ "ser1" ]
+        },
+        {
+            "name": "kom2",
+            "tasks": 100,
+            "capacity": 100,
+            "delay": 2,
+            "neighbours": [ "ser1" ]
+        },
+        {
+            "name": "kom3",
+            "tasks": 100,
+            "capacity": 100,
+            "delay": 2,
+            "neighbours": [ "ser1" ]
+        },
+        {
+            "name": "kom4",
+            "tasks": 100,
+            "capacity": 100,
+            "delay": 2,
+            "neighbours": [ "ser1" ]
+        },
+        {
+            "name": "kom5",
+            "tasks": 100,
+            "capacity": 100,
+            "delay": 2,
+            "neighbours": [ "ser1" ]
+        },
+        {
+            "name": "kom6",
+            "tasks": 100,
+            "capacity": 100,
+            "delay": 2,
+            "neighbours": [ "ser2" ]
+        },
+        {
+            "name": "kom7",
+            "tasks": 100,
+            "capacity": 100,
+            "delay": 2,
+            "neighbours": [ "ser2" ]
+        },
+        {
+            "name": "kom8",
+            "tasks": 100,
+            "capacity": 100,
+            "delay": 2,
+            "neighbours": [ "ser2" ]
+        },
+        {
+            "name": "kom9",
+            "tasks": 100,
+            "capacity": 100,
+            "delay": 2,
+            "neighbours": [ "ser2" ]
+        },
+        {
+            "name": "kom10",
+            "tasks": 100,
+            "capacity": 100,
+            "delay": 2,
+            "neighbours": [ "ser2" ]
+        },
+        {
+            "name": "kom11",
+            "tasks": 100,
+            "capacity": 100,
+            "delay": 2,
+            "neighbours": [ "ser3" ]
+        },
+        {
+            "name": "kom12",
+            "tasks": 100,
+            "capacity": 100,
+            "delay": 2,
+            "neighbours": [ "ser3" ]
+        },{
+            "name": "kom13",
+            "tasks": 100,
+            "capacity": 100,
+            "delay": 2,
+            "neighbours": [ "ser3" ]
+        },{
+            "name": "kom14",
+            "tasks": 100,
+            "capacity": 100,
+            "delay": 2,
+            "neighbours": [ "ser3" ]
+        },{
+            "name": "kom15",
+            "tasks": 100,
+            "capacity": 100,
+            "delay": 2,
+            "neighbours": [ "ser3" ]
+        },
+        {
+            "name": "kom16",
+            "tasks": 100,
+            "capacity": 100,
+            "delay": 2,
+            "neighbours": [ "ser4" ]
+        },{
+            "name": "kom17",
+            "tasks": 100,
+            "capacity": 100,
+            "delay": 2,
+            "neighbours": [ "ser4" ]
+        },{
+            "name": "kom18",
+            "tasks": 100,
+            "capacity": 100,
+            "delay": 2,
+            "neighbours": [ "ser4" ]
+        },{
+            "name": "kom19",
+            "tasks": 100,
+            "capacity": 100,
+            "delay": 2,
+            "neighbours": [ "ser4" ]
+        },{
+            "name": "kom20",
+            "tasks": 100,
+            "capacity": 100,
+            "delay": 2,
+            "neighbours": [ "ser4" ]
+        }
+    ]
+}
