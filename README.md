@@ -20,7 +20,7 @@ The list of devices is a configuration for the simulator.
 
 ## How to run
 ### With IntelliJ IDEA
-1. Open Project with IntelliJ IDEA
+1. Open project with IntelliJ IDEA
 2. Wait for configuration to finish.
 3. Navigate to ``Main.java`` file and run the program with play button.
 
@@ -32,7 +32,7 @@ At the very beggining of the program you are asked to enter a letter specyfying 
 - ``c`` - cloud simulation - a scenario that resemles real cloud-edge-iotdevices nodes
 - ``v`` - large cloud simulation - larger version of 'c'
 
-Configuration files are jsons - they specify all the parameters for the execution. You can specify your own configurations based on the examples an use them in the program.
+Configuration files are jsons - they specify all the parameters for the execution. You can create your own configurations based on the examples and use them in the program.
 
 
 The execution runs with 100x speed - it can be adjusted in Main class.
