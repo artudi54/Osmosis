@@ -1,4 +1,5 @@
 # Osmosis - IoT Project
+This project was made at IoT course at AGH in Cracow conducted by [Tomasz Szydło](http://home.agh.edu.pl/~tszydlo/). 
 ## About project
 This is a project directed to create simple environment to show how certain IoT device configurations can be balanced bacing on task number and capacity of the device. Based on those two parameters the concentration is calculated. Each connected device pairs compare their concentration and exchange the tasks, to balance each other. In the end the result of the simulation is a balanced device configuration with evenly (based on concentration) distributed tasks.
 
@@ -38,3 +39,14 @@ Configuration files are jsons - they specify all the parameters for the executio
 The execution runs with 100x speed - it can be adjusted in Main class.
 
 At the end of the execution you are presented with gif result ``output/output.gif``. The ``output`` directory also contains all images generated in a process.
+
+## Documentation
+Full documentation available here [Full documentation](docs/Rozmieszczanie%20procesów%20przetwarzania%20danych%20w%20systemach%20IoT%20-%20dokumentacja%20projektu.pdf). 
+
+## Examples
+
+### Task migration to cloud
+![](docs/cloud.gif)
+
+### Task diffusion
+![](docs/factory.gif)
